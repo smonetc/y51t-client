@@ -1,0 +1,8 @@
+.landing-container{
+    margin-top: 40%;
+    display: grid;
+}
+
+@media screen and (min-width: 600px){
+    
+}

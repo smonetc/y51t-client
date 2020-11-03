@@ -1,0 +1,23 @@
+.hero-container{
+    display: grid;
+    grid-template-rows: repeat(2,500px);
+}
+
+.hero-text{
+    padding: 0 45px;
+    text-align: center;
+}
+
+.hero-text h2{
+    font-size: 2em;
+}
+
+.hero-text h4{
+    font-size: 1.3em;
+    margin-top: 20px;
+}
+
+.img-section{
+    display: flex;
+    justify-content: center;
+}

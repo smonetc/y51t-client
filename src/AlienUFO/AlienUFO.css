@@ -1,0 +1,26 @@
+.alienufo-container{
+    margin: 10% 25% 0 25%;
+    text-align: center;
+    margin-bottom: 6%;
+    /* border-top: 3px solid black; */
+    min-width: 50vw;
+    display: grid;
+    grid-template-rows: repeat(2,300px);
+}
+
+.title{
+    font-size: 2em;
+    margin: 18% 0 15% 0;
+}
+
+.blurp{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 18%;
+    border-radius: 10px;
+    padding: 10%;
+}
+
+h4{
+    padding-bottom: 5%;
+}

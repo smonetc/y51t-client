@@ -1,16 +1,19 @@
 .alienufo-container{
     margin: 10% 25% 0 25%;
     text-align: center;
-    margin-bottom: 6%;
+    /* margin-bottom: 6%; */
     /* border-top: 3px solid black; */
     min-width: 50vw;
     display: grid;
-    grid-template-rows: repeat(2,300px);
 }
 
 .title{
     font-size: 2em;
-    margin: 18% 0 15% 0;
+    padding: 50px 0;
+}
+
+.info-section{
+    grid-template-columns: 600px;
 }
 
 .blurp{

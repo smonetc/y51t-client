@@ -1,8 +1,12 @@
-.landing-container{
-    margin-top: 40%;
-    display: grid;
+@media screen and (min-width: 375px){
+    .landing-container{
+        margin: 100px 0 40px 0;
+        display: grid;
+        min-width: 90%;
+    }
 }
 
-@media screen and (min-width: 600px){
-    
-}
+/* @media screen and (min-width: 600px){
+    .landing-container{
+    } 
+} */

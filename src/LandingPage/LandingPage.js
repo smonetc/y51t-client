@@ -9,7 +9,6 @@ class LandingPage extends React.Component{
         return(
             <div className='landing-container'>
                <Hero/>
-               <AlienUFO/>
             </div>
         )
     }

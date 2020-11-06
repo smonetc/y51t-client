@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+h2{
+    text-align: center;
+}
+
 select{
     margin-top: 10px;
     border-radius: 20px;

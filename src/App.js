@@ -6,35 +6,88 @@ import './App.css'
 import LandingPage from './LandingPage/LandingPage'
 import Forum from './Forum/Forum'
 import Post from './Post/Post'
+import Y51tContext from './Y51tContext'
+import config from './config'
 
 class App extends React.Component{
    constructor(props){
       super(props)
-      this.state = {
-      category: STORE.category,
-      sightings: STORE.sightings,
-      signin: STORE.signin
+         this.state = {
+         sightings:[],
+         category:[],   
+         locations: STORE.locations,
       }
    }
 
-   render(){
-      const {category,sightings} = this.state
-      return(
-         <div className='website-container'>
-            <nav>
-               <Navbar />
-            </nav>
-            <main>
-               <Switch>
-                  <Route exact path='/' component={() => <LandingPage sighting={sightings} />} />
-                  <Route path='/forum' component={() => <Forum sighting={sightings} category={category} />} />
-                  <Route path='/post' component={() => <Post category={category} />} />
-               </Switch>
-            </main>
-            <footer>
+   setSightings = sightings => {
+      this.setState({
+        sightings,
+        error: null,
+      })
+    }
+    setCategory = category => {
+      this.setState({
+        category,
+        error: null,
+      })
+    }
 
-            </footer>
-         </div>
+   handleAddSighting = sighting => {
+   this.setState({
+      sighting: [...this.state.sightings, //overwrite the existing properties with the ones we're passing
+      sighting]
+   })
+   }
+   
+   componentDidMount() {
+      Promise.all([
+         fetch(`${config.API_ENDPOINT}/api/sightings`),
+         fetch(`${config.API_ENDPOINT}/api/category`)
+       ])
+       .then(([sightingsRes, categoryRes]) => {
+         if (!sightingsRes.ok)
+             return sightingsRes.json().then(e => Promise.reject(e));
+         if (!categoryRes.ok)
+             return categoryRes.json().then(e => Promise.reject(e));
+     
+         return Promise.all([sightingsRes.json(), categoryRes.json()]);
+     })
+     .then(([sightings, category]) => {
+         this.setState({sightings, category});
+         console.log(sightings)
+         console.log(category)
+     })
+     .catch(error => {
+         console.error({error});
+     })
+    }
+
+   render(){
+      const contextValue = {
+         sightings: this.state.sightings,
+         category: this.state.category,
+         addFolder: this.handleAddSighting,
+         }
+      const { locations } = this.state
+
+      return(
+         <Y51tContext.Provider value={contextValue}>
+            <div className='website-container'>
+               <nav>
+                  <Navbar />
+               </nav>
+               <main>
+                  <Switch>
+                     <Route exact path='/' component={() => <LandingPage />} />
+                     <Route path='/forum' component={() => <Forum  />} />
+                     <Route path='/post' component={() => <Post location={locations} />} />
+                  </Switch>
+               </main>
+               <footer>
+
+               </footer>
+            </div>
+         </Y51tContext.Provider>
       )
    }
 }

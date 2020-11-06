@@ -148,10 +148,230 @@ export default {
             "username":"Anonymous"
         }
     ],
-    "signin":[
+    "locations": [
         {
-            "username":"yupIsawthem",
-            "password":"AlienandUFO2020"
+            "id": 1,
+            "place": "Africa"
+        },
+        {
+            "id":2,
+            "place":"Asia"
+        },
+        {
+            "id":3,
+            "place":"Canada"
+        },
+        {
+            "id":4,
+            "place":"Europe"
+        },
+        {
+            "id":5,
+            "place":"Mexico"
+        },
+        {
+            "id":6,
+            "place": "South America"
+        },
+        {
+            "id": 7,
+            "place":"Alabama"
+        },        
+        {
+            "id": 8,
+            "place":"Alaska"
+        },
+        {
+            "id":9,
+            "place":"Arizona"
+        },
+        {
+            "id":10,
+            "place":"Arkansas"
+        },
+        {
+            "id":11,
+            "place":"California"
+        },
+        {
+            "id":12,
+            "place":"Colorado"
+        },
+        {
+            "id":13,
+            "place":"Connecticut"
+        },
+        {
+            "id":14,
+            "place":"Delaware"
+        },
+        {
+            "id":15,
+            "place":"Florida"
+        },
+        {
+            "id":16,
+            "place":"Georgia"
+        },
+        {
+            "id":17,
+            "place":"Hawaii"
+        },
+        {
+            "id":18,
+            "place":"Idaho"
+        },
+        {
+            "id":19,
+            "place":"Illinois"
+        },
+        {
+            "id":20,
+            "place":"Indiana"
+        },
+        {
+            "id":21,
+            "place":"Iowa"
+        },
+        {
+            "id":22,
+            "place":"Kansas"
+        },
+        {
+            "id": 23,
+            "place":"Kentucky"
+        },
+        {
+            "id":24,
+            "place":"Louisiana"
+        },
+        {
+            "id":25,
+            "place":"Maine"
+        },
+        {
+            "id":26,
+            "place":"Maryland"
+        },
+        {
+            "id":27,
+            "place":"Massachusetts"
+        },
+        {
+            "id":28,
+            "place":"Michigan"
+        },
+        {
+            "id":29,
+            "place":"Minnesota"
+        },
+        {
+            "id":30,
+            "place":"Mississippi"
+        },
+        {
+            "id":31,
+            "place":"Missouri"
+        },
+        {
+            "id":32,
+            "place":"Montana"
+        },
+        {
+            "id": 33,
+            "place":"Nebraska"
+        },
+        {
+            "id":34,
+            "place":"Nevada"
+        },
+        {
+            "id":35,
+            "place":"New Hampshire"
+        },
+        {
+            "id":36,
+            "place":"New Jersey"
+        },
+        {
+            "id":37,
+            "place":"New Mexico"
+        },
+        {
+            "id":38,
+            "place":"New York"
+        },
+        {
+            "id":39,
+            "place":"North Carolina"
+        },
+        {
+            "id":40,
+            "place":"North Dakota"
+        },
+        {
+            "id":41,
+            "place":"Ohio"
+        },
+        {
+            "id":42,
+            "place":"Oklahoma"
+        },
+        {
+            "id":43,
+            "place":"Oregon"
+        },
+        {
+            "id":44,
+            "place":"Pennsylvania"
+        },
+        {
+            "id":45,
+            "place":"Rhode Island"
+        },
+        {
+            "id":46,
+            "place":"South Carolina"
+        },
+        {
+            "id":47,
+            "place":"South Dakota"
+        },
+        {
+            "id":48,
+            "place":"Tennessee"
+        },
+        {
+            "id":49,
+            "place":"Texas"
+        },
+        {
+            "id":50,
+            "place":"Utah"
+        },
+        {
+            "id":51,
+            "place":"Vermont"
+        },
+        {
+            "id":52,
+            "place":"Virginia"
+        },
+        {
+            "id":53,
+            "place":"Washington"
+        },
+        {
+            "id":54,
+            "place":"West Virginia"
+        },
+        {
+            "id":55,
+            "place":"Wisconsin"
+        },
+        {
+            "id":56,
+            "place":"Wyoming"
         }
-    ],
+    ]
 }

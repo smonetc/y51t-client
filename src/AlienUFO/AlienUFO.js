@@ -8,7 +8,7 @@ class AlienUFO extends React.Component{
         return(
             <div className='alienufo-container'>
                 <h3 className='title'>What we talk about</h3>
-                <div>
+                <div className='info-section'> 
                 <div className='alienblurp blurp'>
                     <img src={alien} alt='alien'/>
                     <h4>Aliens</h4>

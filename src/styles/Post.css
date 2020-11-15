@@ -41,3 +41,10 @@ input[type=submit]{
     border-radius: 20px;
     padding: 10px;
 }
+
+.postsubmitbtn{
+    border: 1px solid aqua;
+    border-radius: 20px;
+    margin-top: 1em;
+    padding: 1em;
+}

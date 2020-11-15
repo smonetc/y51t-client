@@ -1,11 +1,11 @@
 import React from 'react'
 import { Route,Switch } from 'react-router-dom'
-import Navbar from './Navbar/Navbar'
+import Navbar from './components/Navbar'
 import STORE from './STORE'
 import './App.css'
-import LandingPage from './LandingPage/LandingPage'
-import Forum from './Forum/Forum'
-import Post from './Post/Post'
+import LandingPage from './components/LandingPage'
+import Forum from './components/Forum'
+import Post from './components/Post'
 import Y51tContext from './Y51tContext'
 import config from './config'
 
@@ -31,42 +31,41 @@ class App extends React.Component{
         error: null,
       })
     }
-
-   handleAddSighting = sighting => {
-   this.setState({
-      sighting: [...this.state.sightings, //overwrite the existing properties with the ones we're passing
-      sighting]
-   })
-   }
    
-   componentDidMount() {
+   async componentDidMount() {
       Promise.all([
-         fetch(`${config.API_ENDPOINT}/api/sightings`),
-         fetch(`${config.API_ENDPOINT}/api/category`)
-       ])
-       .then(([sightingsRes, categoryRes]) => {
+     await fetch(`${config.API_ENDPOINT}/api/sightings`),
+     await fetch(`${config.API_ENDPOINT}/api/category`)
+      ])
+      .then(([sightingsRes, categoryRes]) => {
          if (!sightingsRes.ok)
-             return sightingsRes.json().then(e => Promise.reject(e));
+            return sightingsRes.json().then(e => Promise.reject(e))
          if (!categoryRes.ok)
-             return categoryRes.json().then(e => Promise.reject(e));
-     
-         return Promise.all([sightingsRes.json(), categoryRes.json()]);
-     })
-     .then(([sightings, category]) => {
-         this.setState({sightings, category});
+            return categoryRes.json().then(e => Promise.reject(e))
+         return Promise.all([sightingsRes.json(), categoryRes.json()])
+      })
+      .then(([sightings,category]) => {
+         this.setState({sightings, category})
          console.log(sightings)
          console.log(category)
-     })
-     .catch(error => {
-         console.error({error});
-     })
-    }
+      })
+      .catch( error => {
+         console.log({error})
+      })
+   }
+
+   handleAddSighting = sighting => {
+      this.setState({
+         sightings: [...this.state.sightings, //overwrite the existing properties with the ones we're passing
+         sighting]
+      })
+   }
 
    render(){
       const contextValue = {
          sightings: this.state.sightings,
          category: this.state.category,
-         addFolder: this.handleAddSighting,
+         addSighting: this.handleAddSighting,
          }
       const { locations } = this.state
 
@@ -78,9 +77,9 @@ class App extends React.Component{
                </nav>
                <main>
                   <Switch>
-                     <Route exact path='/' component={() => <LandingPage />} />
-                     <Route path='/forum' component={() => <Forum  />} />
-                     <Route path='/post' component={() => <Post location={locations} />} />
+                     <Route path="/" exact={true} component={() => <LandingPage />} />
+                     <Route path="/forum" component={() => <Forum  />} />
+                     <Route path="/post" component={() => <Post location={locations} />} />
                   </Switch>
                </main>
                <footer>

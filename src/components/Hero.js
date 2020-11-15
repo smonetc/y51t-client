@@ -1,5 +1,5 @@
 import React from 'react'
-import './Hero.css'
+import '../styles/Hero.css'
 import {Link} from 'react-router-dom'
 import ufo from './ufo.png'
 

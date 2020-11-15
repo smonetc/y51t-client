@@ -1,7 +1,7 @@
 import React from 'react'
-import './LandingPage.css'
-import AlienUFO from '../AlienUFO/AlienUFO'
-import Hero from '../Hero/Hero'
+import '../styles/LandingPage.css'
+// import AlienUFO from '../AlienUFO/AlienUFO'
+import Hero from './Hero'
 
 
 class LandingPage extends React.Component{

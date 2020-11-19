@@ -5,7 +5,7 @@ import '../styles/Post.css'
 import config from '../config'
 import Y51tContext from '../Y51tContext'
 import Y51tError from '../Y51tError'
-// import { Link } from 'react-router-dom';
+import ValidationError from '../ValidationError'
 
 
 class Post extends React.Component{
@@ -20,24 +20,44 @@ class Post extends React.Component{
    constructor(props){
       super(props)
       this.state = {
-         startDate : ''
+         startDate : '',
+         content: {
+            value: '',
+            touched:false
+          },
+          username: {
+            value: '',
+            touched:false
+          },
+          errorMessage: null
       }
       this.handleChange = this.handleChange.bind(this)
    }
+
+   static contextType = Y51tContext
 
    handleChange(date) {
       this.setState({
          startDate : date
       })
    }
-
-  static contextType = Y51tContext
+   updateContent(content) {
+      this.setState({
+         content: {value:content, touched: true}
+      })
+   }
+   updateUsername(username) {
+      this.setState({
+         username: {value:username, touched: true}
+      })
+   }
 
    handleSubmit = (e) => {
       e.preventDefault()
 
       const { location_name,date_viewed,category_id,content,username } = e.target
-      const getSighting ={
+      if (this.isValid()){
+         const getSighting ={
          location_name:location_name.value,
          date_viewed : date_viewed.value,
          category_id : category_id.value,
@@ -67,15 +87,25 @@ class Post extends React.Component{
             console.log(this.context, 'This should work')
             this.context.addSighting(sighting)
             console.log(this.props, 'this should work also')
-            // this.props.history.push("/")
             window.location = '/forum'
          })
          .catch(error => {
          console.log(error)
          })
       }
-     
-      
+   }
+   isValid = () => {
+      const content = this.state.content.value.trim()
+      const username = this.state.username.value.trim()
+      const provideInfo = {content,username}
+      for (const [key, value] of Object.entries(provideInfo)) {
+         if(value.length <= 3 ){
+            this.setState({errorMessage: `Please provide more info for ${key}`});
+            return false;
+         }
+      }
+      return true;
+   }
    render(){
       const {location} = this.props
       const {category = []} = this.context
@@ -84,10 +114,13 @@ class Post extends React.Component{
          <h2>Post Your Sighting!</h2>
          <div className='post-form'>
             <form  onSubmit={this.handleSubmit}>
-               <label htmlFor='location_name'>Location:</label>
+               <label htmlFor='location_name'> * Location:</label>
                <br />
-               <select name="location_name" id="location_name">
-                  <option value= {null}>Choose One</option>
+               <select 
+               name="location_name" 
+               id="location_name"
+               required>
+                  <option value=''>Choose One</option>
                   {location.map(l => 
                      <option key={l.id} value={l.place}>
                         {l.place}
@@ -95,7 +128,7 @@ class Post extends React.Component{
                   )}
                </select>
                   <br />
-               <label htmlFor='date_viewed'>Date:</label>
+               <label htmlFor='date_viewed'> * Date:</label>
                <br />
                <DatePicker
                   selected={this.state.startDate}
@@ -103,12 +136,17 @@ class Post extends React.Component{
                   className='date'
                   name='date_viewed'
                   id='date_viewed'
+                  required
                   />
                <br/>
-               <label htmlFor='category_id'>Category:</label>
+               <label htmlFor='category_id'> * Category:</label>
                <br />
-               <select name="category_id" id="category_id">
-                  <option>Choose One</option>
+               <select 
+               name="category_id" 
+               id="category_id"
+               required
+               >
+                  <option value=''>Choose One</option>
                   {category.map( c => 
                      <option key={c.id} value={c.id}>
                         {c.title}
@@ -116,13 +154,22 @@ class Post extends React.Component{
                      )}
                </select>
                <br />
-               <label htmlFor='content'>Share your encounter: </label>
+               <label htmlFor='content'> * Share your encounter: </label>
                <br />
-               <textarea name='content' id='content' />       
+               <textarea 
+               name='content' 
+               id='content'
+               onChange={e => this.updateContent(e.target.value)}
+               required />       
                <br />
-               <label htmlFor='username'>Your Name:</label>
+               <label htmlFor='username'> * Your Name:</label>
                <br />
-               <input type='text' name='username' id='username' />
+               <input 
+               type='text' 
+               name='username' 
+               id='username'
+               onChange={e => this.updateUsername(e.target.value)}
+               required />
                <br />
                <button 
                className='postsubmitbtn'
@@ -130,6 +177,8 @@ class Post extends React.Component{
                >
                Submit
                </button>
+               {this.state.errorMessage && <ValidationError message={this.state.errorMessage}/>}
+
             </form>   
             </div> 
          </Y51tError>     

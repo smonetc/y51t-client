@@ -6,7 +6,7 @@ import config from '../config'
 import Y51tContext from '../Y51tContext'
 import Y51tError from '../Y51tError'
 import ValidationError from '../ValidationError'
-
+import STORE from '../STORE'
 
 class Post extends React.Component{
 
@@ -29,6 +29,7 @@ class Post extends React.Component{
             value: '',
             touched:false
           },
+          locations: STORE.locations,
           errorMessage: null
       }
       this.handleChange = this.handleChange.bind(this)
@@ -107,7 +108,7 @@ class Post extends React.Component{
       return true;
    }
    render(){
-      const {location} = this.props
+      const {locations} = this.state
       const {category = []} = this.context
    return(
       <Y51tError>
@@ -121,7 +122,7 @@ class Post extends React.Component{
                id="location_name"
                required>
                   <option value=''>Choose One</option>
-                  {location.map(l => 
+                  {locations.map(l => 
                      <option key={l.id} value={l.place}>
                         {l.place}
                      </option>

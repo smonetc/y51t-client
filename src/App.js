@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter,Route,Switch } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import STORE from './STORE'
+// import STORE from './STORE'
 import './App.css'
 import LandingPage from './components/LandingPage'
 import Forum from './components/Forum'
@@ -17,7 +17,7 @@ class App extends React.Component{
          this.state = {
          sightings:[],
          category:[],   
-         locations: STORE.locations,
+         // locations: STORE.locations,
       }
    }
 
@@ -82,7 +82,7 @@ class App extends React.Component{
                      <Switch>
                         <Route path="/" exact={true} component={() => <LandingPage />} />
                         <Route path="/forum" component={() => <Forum  />} />
-                        <Route path="/post" component={() => <Post location={locations} />} />
+                        <Route path="/post" component={() => <Post />} /> 
                      </Switch>
                   </main>
                   <footer>

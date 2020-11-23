@@ -23,7 +23,7 @@ class Hero extends React.Component{
             <br />
             <div className='call-to-action'>
                <h3>
-                  <a href='https://y51t-by86j16ht.vercel.app/post' className='calltoaction'>Start Posting!</a>
+                  <a href='https://y51t.smonetc.vercel.app/post' className='calltoaction'>Start Posting!</a>
                </h3>
             </div>
          </div>

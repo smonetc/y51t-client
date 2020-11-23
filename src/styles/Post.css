@@ -24,6 +24,7 @@ select{
     padding: 10px;
     border-radius: 20px;
     width: 400px;
+    -webkit-appearance:none;
 }
 
 .date{
@@ -97,33 +98,6 @@ input[type=submit]{
     background-color: aqua;
     color: black;
 }
-
-/* .date,
-.react-datepicker__navigation {
-  color:white !important;
-}
-
-.date,
-.react-datepicker__month-text{
-   color: white !important;
-} */
-
-/* .date,
-.picker__box .picker__header .picker__date-display .picker__weekday-display {
-    background-color: #ff4444;
-}
-.date,
-.picker__box .picker__header .picker__date-display {
-background-color: #ff4444;
-}
-.date,
-.picker__box .picker__table .picker--focused, .picker__box .picker__table .picker__day--selected, .picker__box .picker__table .picker__day--selected:hover {
-background-color: #ff4444;
-}
-.date,
-.picker__box .picker__table .picker__day.picker__day--today {
-color: #ff4444;
-} */
 
 @media screen and (max-width: 500px){
     h2{

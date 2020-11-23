@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/LandingPage.css'
-// import AlienUFO from '../AlienUFO/AlienUFO'
 import Hero from './Hero'
 
 

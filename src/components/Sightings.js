@@ -1,6 +1,5 @@
 import React from 'react'
 import Y51tContext from '../Y51tContext'
-// import { format } from 'date-fns'
 import Accordion from './Accordion'
 import '../styles/Sightings.css'
 import moment from 'moment'
@@ -30,7 +29,6 @@ class Sightings extends React.Component{
                      <div className= 'inline-section'>
                         <div className='head'>
                            <p>Date: {responseDate}</p> 
-                           {/* <p>{format(date, 'Do MMM YYYY')}</p> */}
                            <p>Type: {category}</p>
                            <p>Location: {location}</p>
                         </div>

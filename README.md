@@ -28,3 +28,6 @@ When clicking on a sighting it will expand to show the sightings description and
 ![Y51T?!](https://github.com/smonetc/y51t-client/blob/main/src/images/postingpage.jpeg)
 
 Here you're able to include all information about your sighting and submit it to the forum. 
+
+[Live Version](https://y51t.smonetc.vercel.app/)
+[API Repo](https://github.com/smonetc/y51t-api)

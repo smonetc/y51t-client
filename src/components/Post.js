@@ -1,6 +1,6 @@
 import React from 'react'
-import DatePicker from "react-datepicker";
-import 'react-datepicker/dist/react-datepicker.css';
+import DatePicker from "react-datepicker"
+import 'react-datepicker/dist/react-datepicker.css'
 import '../styles/Post.css'
 import config from '../config'
 import Y51tContext from '../Y51tContext'
@@ -114,7 +114,7 @@ class Post extends React.Component{
          <h2>Post Your Sighting!</h2>
          <div className='post-form'>
             <form  onSubmit={this.handleSubmit}>
-               <label htmlFor='location_name'> * Location:</label>
+               <label htmlFor='location_name' className='label'> * Location:</label>
                <br />
                <select 
                name="location_name" 
@@ -128,7 +128,7 @@ class Post extends React.Component{
                   )}
                </select>
                   <br />
-               <label htmlFor='date_viewed'> * Date:</label>
+               <label htmlFor='date_viewed' className='label'> * Date:</label>
                <br />
                <DatePicker
                   selected={this.state.startDate}
@@ -136,10 +136,11 @@ class Post extends React.Component{
                   className='date'
                   name='date_viewed'
                   id='date_viewed'
+                  placeholderText='Date of sighting'
                   required
                   />
                <br/>
-               <label htmlFor='category_id'> * Category:</label>
+               <label htmlFor='category_id' className='label'> * Category:</label>
                <br />
                <select 
                name="category_id" 
@@ -154,20 +155,23 @@ class Post extends React.Component{
                      )}
                </select>
                <br />
-               <label htmlFor='content'> * Share your encounter: </label>
+               <label htmlFor='content' className='label'> * Share your encounter: </label>
                <br />
-               <textarea 
+               <textarea
+               className='textarea' 
                name='content' 
                id='content'
+               placeholder='Tell your story'
                onChange={e => this.updateContent(e.target.value)}
                required />       
                <br />
-               <label htmlFor='username'> * Your Name:</label>
+               <label htmlFor='username' className='label'> * Your Name:</label>
                <br />
                <input 
                type='text' 
                name='username' 
                id='username'
+               placeholder='Your name'
                onChange={e => this.updateUsername(e.target.value)}
                required />
                <br />

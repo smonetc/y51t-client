@@ -1,13 +1,15 @@
 import React from 'react'
-import { Route,Switch } from 'react-router-dom'
+import { BrowserRouter,Route,Switch } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import STORE from './STORE'
 import './App.css'
 import LandingPage from './components/LandingPage'
 import Forum from './components/Forum'
 import Post from './components/Post'
+import Footer from './components/Footer'
 import Y51tContext from './Y51tContext'
 import config from './config'
+import history from './History'
 
 class App extends React.Component{
    constructor(props){
@@ -71,21 +73,23 @@ class App extends React.Component{
 
       return(
          <Y51tContext.Provider value={contextValue}>
-            <div className='website-container'>
-               <nav>
-                  <Navbar />
-               </nav>
-               <main>
-                  <Switch>
-                     <Route path="/" exact={true} component={() => <LandingPage />} />
-                     <Route path="/forum" component={() => <Forum  />} />
-                     <Route path="/post" component={() => <Post location={locations} />} />
-                  </Switch>
-               </main>
-               <footer>
-
-               </footer>
-            </div>
+             <BrowserRouter history={history}>
+               <div className='website-container'>
+                  <nav>
+                     <Navbar />
+                  </nav>
+                  <main>
+                     <Switch>
+                        <Route path="/" exact={true} component={() => <LandingPage />} />
+                        <Route path="/forum" component={() => <Forum  />} />
+                        <Route path="/post" component={() => <Post location={locations} />} />
+                     </Switch>
+                  </main>
+                  <footer>
+                     <Footer/>
+                  </footer>
+               </div>
+            </BrowserRouter>
          </Y51tContext.Provider>
       )
    }

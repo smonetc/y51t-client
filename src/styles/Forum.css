@@ -1,33 +1,26 @@
-/* .forum-container{
-    margin-top: 5%;
-}
-
 h1{
     text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: white;
 }
 
 .sightings-section{
-    margin-top: 10%;
-} */
-
-/* .sightings{
-    border: 2px solid black;
-    border-radius: 20px;
-    padding: 1%;
-    margin: 1% 0;
-    list-style: none;
-} */
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
 
 .sightings{
     list-style: none;
+    font-family: 'Work Sans', sans-serif;
+    width: 60%;
+    margin: 0 auto;
 }
 
-/* .inline{
-    display: inline-block;
-    padding-bottom: 1em;
-} */
-
-/* .left{
-    padding-left: 1em;
-} */
+@media screen and (max-width: 500px){
+  .sightings{
+      width: 100%;
+      padding-right: 3em;
+  }
+}

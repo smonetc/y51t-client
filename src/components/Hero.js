@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/Hero.css'
-import {Link} from 'react-router-dom'
 import ufo from './ufo.png'
 
 
@@ -12,7 +11,7 @@ class Hero extends React.Component{
                <img src={ufo} alt="ufo"/>  
             </div>
             <div className='hero-text'>
-               <h2>You 5aw 1t Too is a home for those who know we
+               <h2><span>You 5aw 1t Too</span> is a home for those who know we
                are not alone in this Universe! </h2>
                <br />
                <h4>
@@ -20,7 +19,12 @@ class Hero extends React.Component{
                   Here at Y51T you're able to post a sighting, <br /> view other 
                   sightings and vote on the sightings, you believe are real sightings. 
                </h4>
-               <Link to='/post' className='calltoaction'>Start Posting!</Link>
+            </div>
+            <br />
+            <div className='call-to-action'>
+               <h3>
+                  <a href='https://y51t-by86j16ht.vercel.app/post' className='calltoaction'>Start Posting!</a>
+               </h3>
             </div>
          </div>
         )

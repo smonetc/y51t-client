@@ -5,14 +5,71 @@
 .nav-button{
     margin: 0 .5em;
     text-decoration: none;
-    font-size: 1em;
-    color: black;
+    font-size: 1.2em;
+    color: white;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .logo{
+    position: relative;
     text-decoration: none;
     font-size: 2em;
-    color: black;
+    /* color: #17183b; */
+    color: white;
     margin:0 3em 0 0;
+    font-family: 'Stalinist One', cursive;
+    -webkit-text-stroke: 2px #0d0628;
 }
 
+.logo::before{
+    content:attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: aqua;
+    -webkit-text-stroke: 2px #0d0628;
+    /* border-right: 2px solid aqua; */
+    overflow: hidden;
+    animation: animate 6s linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes animate{
+    0%{
+        width: 0;
+    }
+    70%{
+        width: 100%;
+    }
+}
+
+.logo:hover{
+    color: aqua;
+}
+
+.nav-button:hover{
+    color: aqua;
+    border-bottom: 1px solid aqua;
+    padding-bottom: 10px !important;
+}
+.logo:active{
+    color: aqua;
+}
+
+.nav-button:active{
+    color: aqua;
+    border-bottom: 1px solid aqua;
+    padding-bottom: 6px !important;
+}
+
+
+@media screen and (max-width: 500px){
+    .logo{
+        font-size: 1.3em;
+    }
+    .nav-button{
+        font-size: 1em;
+    }
+}

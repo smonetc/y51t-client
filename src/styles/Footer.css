@@ -1,0 +1,38 @@
+.footer-section{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 1% 0;
+}
+
+.footer-section h4{
+   padding-right: 1%;
+   color: white;
+   font-family: 'Work Sans', sans-serif;
+}
+
+.footer-section a{
+   text-decoration: none;
+   color: white;
+}
+
+.twitter{
+   padding-left: 1%;
+}
+
+.footer-section a:hover{
+   color: aqua;
+}
+
+i:hover{
+   color: aqua;
+}
+
+@media screen and (max-width: 500px){
+   .twitter{
+      padding-left: 3%;
+   }
+   .footer-section h4{
+      padding-right: 3%;
+   }
+}

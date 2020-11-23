@@ -1,63 +1,134 @@
-/* .hero-container{
-    display: grid;
-   
-    color: black;
+/* universal fade-in animation for all screen sizes */
+.img-section img{
+    animation: fadeIn ease 7s;
+    -webkit-animation: fadeIn ease 7s;
+    -moz-animation: fadeIn ease 7s;
+    -o-animation: fadeIn ease 7s;
+    -ms-animation: fadeIn ease 7s;
+    animation-iteration-count: 1;
 }
 
-.hero-text{
-    padding: 30% 45px 0 45px;
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+    
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+span{
+    color: aqua;
+}
+
+.calltoaction:hover{
+    color: aqua;
+}
+
+img{
+    width: 512px;
+    height: 512px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+h4{
     text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    line-height: 30px;
+    color: white;
 }
 
-.hero-text h2{
-    font-size: 2em;
+.call-to-action{
+    margin: 0 auto;
+    width: 20%;
 }
 
-.hero-text h4{
+h3{
     font-size: 1.3em;
-    margin: 20px 0 30px 0;
+    text-align: center;
+    border: 1px solid aqua;
+    border-radius: 20px;
+    padding: 4%;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .calltoaction{
     text-decoration: none;
-    color: black;
-    font-weight: 600;
-    padding: 15px;
-    border:1px solid cyan;
-    background-color: cyan;
-    border-radius: 30px;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
-img{
-    text-align: center;
-    width: 300px;
-    height: 300px;
-   
-} */
 
-.img-section{
-    margin-top: 3em;
-    margin-bottom: 5em;
-    width: 60vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media screen and (max-width: 370px){
+    .calltoaction{
+        padding-left: 100px !important;
+    }
 }
 
-img{
-    width: 100%;
-    padding-left: 9em;
-    text-align: center;
-    justify-content: center;
-    align-self: center;
-}
-.hero-text{
-    width: 60vw;
-    text-align: center;
-    padding-left: 4.5em;
+@media screen and (max-width: 500px){
+    .img-section{
+        padding: 0 auto;
+    }
+
+    img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-text{
+        padding: 0 1em;
+    }
+
+    h4{
+        font-size: .8em !important;
+    }
+
+    h3{
+        font-size: 1em;
+        padding: 15% 15% !important;
+    }
 
 }
 
-h2{
-    width: 60vw;
+@media screen and (min-width: 1000px){
+    
+    .hero-text{
+        margin-top: 10%;
+        margin-bottom: 6%;
+        padding: 0 2em;
+    }
+
+    h2{
+        font-size: 2.6em !important;
+    }
+    
+    h4{
+        font-size: 1.5em !important;
+    }
+    
 }
+
+
+

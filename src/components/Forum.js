@@ -17,10 +17,7 @@ class Forum extends React.Component{
 
    render(){
       let sightings = this.context.sightings
-      // if (this.props.match.params.category !== undefined){
-      //   sightings = this.context.sightings.filter(sighting => 
-      //    sighting.category === this.props.match.params.category.category) 
-      // }
+
       return(
          <div className='forum-container'>
             <h1>Sightings</h1>

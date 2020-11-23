@@ -7,7 +7,7 @@ All you need to do to get started is start posting! Here at Y51T you're able to 
 
 ## Landing Page 
 
-![Y51T?!](./images/landgingpage.jpeg)
+![Y51T?!](https://github.com/smonetc/y51t-client/blob/main/src/images/landgingpage.jpeg)
 
 Here you're greeted with a colorful Hero image along with hero text and a explanation of how to use the site. 
 
@@ -15,8 +15,8 @@ Followed by a call to action button where you can go straight to the posting pag
 
 ## Forum Page
 
-![Y51T?!](./images/forumpage.jpeg)
-![Y51T?!](./images/forumpagetwo.jpeg)
+![Y51T?!](https://github.com/smonetc/y51t-client/blob/main/src/images/forumpage.jpeg)
+![Y51T?!](https://github.com/smonetc/y51t-client/blob/main/src/images/forumpagetwo.jpeg)
 
 Here you're able to view all recent sightings posted on the website. 
 
@@ -25,6 +25,6 @@ When clicking on a sighting it will expand to show the sightings description and
 
 ## Posting Page
 
-![Y51T?!](./images/postingpage.jpeg)
+![Y51T?!](https://github.com/smonetc/y51t-client/blob/main/src/images/postingpage.jpeg)
 
 Here you're able to include all information about your sighting and submit it to the forum. 

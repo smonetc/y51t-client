@@ -31,3 +31,5 @@ Here you're able to include all information about your sighting and submit it to
 
 [Live Version](https://y51t.smonetc.vercel.app/)
 [API Repo](https://github.com/smonetc/y51t-api)
+
+Tech used: React, CSS, JS,API

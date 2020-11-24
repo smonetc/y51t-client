@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter,Route,Switch } from 'react-router-dom'
 import Navbar from './components/Navbar'
-// import STORE from './STORE'
 import './App.css'
 import LandingPage from './components/LandingPage'
 import Forum from './components/Forum'
@@ -16,8 +15,7 @@ class App extends React.Component{
       super(props)
          this.state = {
          sightings:[],
-         category:[],   
-         // locations: STORE.locations,
+         category:[],
       }
    }
 
@@ -48,8 +46,6 @@ class App extends React.Component{
       })
       .then(([sightings,category]) => {
          this.setState({sightings, category})
-         console.log(sightings)
-         console.log(category)
       })
       .catch( error => {
          console.log({error})
@@ -69,7 +65,6 @@ class App extends React.Component{
          category: this.state.category,
          addSighting: this.handleAddSighting,
          }
-      const { locations } = this.state
 
       return(
          <Y51tContext.Provider value={contextValue}>

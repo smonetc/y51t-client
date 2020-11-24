@@ -81,9 +81,13 @@ h3{
 }
 
 
-@media screen and (max-width: 370px){
-    .calltoaction{
+@media screen and (max-width: 400px){
+    /* .calltoaction{
         padding-left: 100px !important;
+    } */
+    h3{
+        border: 1px solid aqua;
+        display: inline-block;
     }
 }
 

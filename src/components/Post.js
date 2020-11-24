@@ -85,9 +85,7 @@ class Post extends React.Component{
             category_id.value = ''
             content.value = ''
             username.value = ''
-            console.log(this.context, 'This should work')
             this.context.addSighting(sighting)
-            console.log(this.props, 'this should work also')
             window.location = '/forum'
          })
          .catch(error => {
